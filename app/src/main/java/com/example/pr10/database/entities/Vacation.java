@@ -21,7 +21,8 @@ foreignKeys = {
                 @Index(value = {"vacation_type"})})
 @TypeConverters(DateConverter.class)
 public class Vacation {
-    @PrimaryKey
+    @ColumnInfo(name = "vacation_id")
+    @PrimaryKey(autoGenerate = true)
     public int vacationId;
 
     @ColumnInfo(name = "employee")

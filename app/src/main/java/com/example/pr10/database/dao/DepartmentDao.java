@@ -24,4 +24,7 @@ public interface DepartmentDao {
 
     @Query("select * from department")
     List<Department> getAllDepartments();
+
+    @Query("select * from department where department_id == :department_id")
+    public Department getDepartment(int department_id);
 }

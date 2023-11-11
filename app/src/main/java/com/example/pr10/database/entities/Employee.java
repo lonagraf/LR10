@@ -3,6 +3,7 @@ package com.example.pr10.database.entities;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -14,7 +15,8 @@ indices = {
         @Index(value = {"department"}),
         @Index(value = {"position"})})
 public class Employee {
-    @PrimaryKey
+    @ColumnInfo(name = "employee_id")
+    @PrimaryKey(autoGenerate = true)
     public int employeeId;
 
     @ColumnInfo(name = "firstname")
@@ -32,5 +34,8 @@ public class Employee {
     @ColumnInfo(name = "position")
     public int position;
 
+    @Ignore
     public Employee(){}
+
+
 }

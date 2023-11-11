@@ -16,7 +16,8 @@ foreignKeys = {
         @ForeignKey(entity = Employee.class, parentColumns = "employeeId", childColumns = "employee")},
 indices = {@Index(value = {"employee"})})
 public class Salary {
-    @PrimaryKey
+    @ColumnInfo(name = "salary_id")
+    @PrimaryKey(autoGenerate = true)
     public int salaryId;
 
     @ColumnInfo(name = "employee")
